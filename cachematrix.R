@@ -44,8 +44,8 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(inv_mx)                      
   }
-  mx <- x$get()         # otherwise, it gets the value of the matrix
-  inv_mx <- solve(mx)   # then it computes the inverse
-  x$setInv(inv_mx)      # sets the inverse value in x with the setInv function
-  inv_mx                # returns the computed inverse matrix
+  mx <- x$get()              # otherwise, it gets the value of the matrix
+  inv_mx <- solve(mx, ...)    # then it computes the inverse
+  x$setInv(inv_mx)           # sets the inverse value in x with the setInv function
+  inv_mx                     # returns the computed inverse matrix
 }
